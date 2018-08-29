@@ -5,7 +5,10 @@
         <title>Div and span</title>
         <style>
             .bluebox{
-                background-color: blue;
+                background-image: url(images/dojacat.jpg);
+                background-size: 75% 75% /*height width*/;
+                background-repeat: no-repeat;
+                background-origin: content-box;
                 color: white;
                 height: 100px;
                 width: auto;
@@ -14,9 +17,13 @@
                 outline-style: solid;
                 outline-color: blue;
                 outline-width: thick;
+                margin: 20px; /* border from all the side */
             }
             .yellowbox{
-                background-color: yellow;
+                background-image: url(images/dojacat.jpg);
+                background-size: 100px;
+                background-origin: border-box;
+                background-position: bottom;
                 height: 100px;
                 width: auto;
                 color: white;
@@ -24,6 +31,7 @@
                 border-width: 10px 15px 5px 8px;;
                 border-color: black green orange yellow;
                 border-style: ridge;
+                margin: 60px 10px 30px 20px;
             }
             .greenbox{
                 background-color: green;
@@ -35,6 +43,7 @@
                 border-color: teal;
                 border-width: 10px 20px;
                 border-radius: 80px; /* Makes borders curve */
+                margin: 60px 10px; /* top/bottom left/right */ 
             }
             .great{
                 background-color: purple;
