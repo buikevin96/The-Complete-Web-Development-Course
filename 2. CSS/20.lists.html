@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Image Opacity</title>
+        <style>
+            ul.list1{
+                /* list-style: square; */
+                /* list-style: lower-roman; */
+                list-style: upper-alpha;
+                list-style-image: url(images/bluesq.jpg);
+
+            }
+            ul.list2{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            ul.list2 li{
+                background-image:url(images/bluesq.jpg);
+                background-repeat: none;
+                background-position: 0px center;
+                padding-left: 30px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p>A list of European Capitals:</p>
+            <ul class="list1">
+                <li>Paris</li>
+                <li>London</li>
+                <li>Madrid</li>
+            </ul>
+        <p>A list of European Capitals:</p>
+            <ul class="list2">
+                <li>Paris</li>
+                <li>London</li>
+                <li>Madrid</li>
+            </ul>
+    </body>
+
+</html>
+
