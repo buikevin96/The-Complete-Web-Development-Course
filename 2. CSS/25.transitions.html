@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Floating</title>
+        <style>
+            .bluebox{
+                background-color: blue;
+                height: 100px;
+                width: 100px;
+                transition: width 1s; 
+            }
+            .bluebox:hover{
+                width: 300px;
+            }
+            .yellowbox{
+                background-color: yellow;
+                height: 100px;
+                width: 100px;
+                transition: width 1s, height 1s, transform 1s;
+            }
+            .yellowbox:hover{
+                width: 300px;
+                height: 200px;
+                transform: rotateX(180deg);
+            }
+            .greenbox{
+                background-color: green;
+                height: 100px;
+            }
+            .great{
+                background-color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="bluebox">
+            <p>Facebook is <span class="great">great</span></p>
+        </div>
+        <div class="yellowbox">
+            <p>Apple is the gape</p>
+        </div>
+        <div class="greenbox">
+            <p>Microsoft</p>
+        </div>
+    </body>
+
+</html>
+
+<!-->
