@@ -47,6 +47,30 @@ if($_GET["submit"]){
     }
 }
 print_r($shoppingBasket);
+echo "<br />";
+                
+// Replace array items in position starting from 0 and delete 2 items     
+array_splice($shoppingBasket, 0, 2, array("mango", "kiwi"));
+        print_r($shoppingBasket);
+echo "<br />";
+               
+// Sort array in ascending order
+sort($shoppingBasket); //or use rsort() for reverse order
+echo "<p>Shopping Basket sorted in ascending order: </p>";
+print_r($shoppingBasket);
+                
+$carMakes = array("BMW"=>"X%", "Audi"=>"A6", "Mercedes"=>"CLS");
+echo "<p>Car Makes:</p>";
+print_r($carMakes);
+
+asort($carMakes);
+echo "<p>Car makes sorted in ascending order print by value:</p>";
+// Sort in ascending order by value
+print_r($carMakes);
+                
+echo "<p>Car makes sorted in ascending order by keys:</p>";
+ksort($carMakes);
+                
 ?>
                 <form>
                     <label for="item">Add item to shopping Basket:</label>
