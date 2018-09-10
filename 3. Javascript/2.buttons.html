@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Buttons</title>
+
+</head>
+<body>
+    <p>Javascript</p>
+    <button onclick="alert('How can I help?')">Click Me.</button>
+    <button id="button2">Select me!</button>
+    <button id="button3">Hover over me!</button>
+
+<script type="text/javascript" >
+    // Get the button2 element, when clicked run function within
+    document.getElementById("button2").onclick=function(){
+        alert("You have just clicked me!"); // 
+    }
+    document.getElementById("button3").onmouseover=function(){
+        alert("You are the best!"); // 
+    }
+
+</script>
+
+</body>
+
+</html>
