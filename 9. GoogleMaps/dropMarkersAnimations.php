@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Show Hide and Delete Markers</title>
+        <title>Drop Markers and Animations</title>
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
         <meta charset="utf-8">
         <style>
@@ -89,8 +89,15 @@
             // Show markers stored in the array
             function showMarkers() {
                 for(var i=0; i<markers.length; i++){
-                    markers[i].setMap(map);
+                    addMarkerwithDelay(i);
                 }
+            }
+
+            function addMarkerwithDelay(i){
+                setTimeout(function(){
+                    markers[i].setMap(map);
+                    markers[i].setAnimation(google.maps.Animation.DROP);
+                }, 200*i);
             }
 
             // Hide markers from the Map (Still in the array)
