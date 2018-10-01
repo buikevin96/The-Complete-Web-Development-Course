@@ -34,6 +34,9 @@
             // Create Map
             var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
+            // Define marker variable
+            var marker;
+
             // Geocode Function
             function geocodeAddress(){
                 var url = "https://maps.googleapis.com/maps/api/geocode/json?address="+document.getElementById("address").value+"&key=AIzaSyCw8BOQqEoBlTft9Eqqla1DZfPRu4yHkiA";
@@ -41,7 +44,38 @@
 
                 $.getJSON(url, function(data){
                     if(data.status == "OK"){
+                        var formattedAddress = data.results[0].formatted_address;
+                        var latitude = data.results[0].geometry.location.lat;
+                        var longitude = data.results[0].geometry.location.lng;
+                        var postcode;
 
+                        $.each(data.results[0].address_components, function(index, element){
+                            if(element.types == "postal_code"){
+                                postcode = element.long_name;
+                                return false; // To stop the loop
+                            }
+                        });
+
+                        // HTML Output onto div
+                        $("#output").html("<b>Formatted Address: </b>" + formattedAddress + "<br /><b>Coordinates</b>: (lat: " + latitude + ", lng: " + longitude + ").<br /><b>PostCode</b>: " + postcode + ".");
+
+                        // Center Map
+                        map.setCenter({lat:latitude,lng:longitude});
+
+                        // Change Zoom Level
+                        map.setZoom(14);
+
+                        // If marker is there delete it
+                        if(marker != undefined){
+                            marker.setMap(null);
+                        }
+
+                        // Create marker
+                        marker = new google.maps.Marker({
+                            map: map,
+                            position: ({lat:latitude,lng:longitude}),
+                            animation: google.maps.Animation.DROP
+                        });
                     }else{
                         $("#output").html("Request Unsuccessful");
                     }
