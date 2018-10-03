@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Slect HTML elements</title>
+        <style>
+            .bluebox{
+                background-color: blue;
+                height: 100px;
+                width: auto;
+               /* visibility: hidden;
+                display: none; */
+            }
+            .yellowbox{
+                background-color: yellow;
+                height: 100px;
+                width: auto;
+            }
+            .greenbox{
+                background-color: green;
+                height: 100px;
+                width: auto;
+            }
+            #great{
+                background-color: purple;
+                display: block;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div class="bluebox">
+            <p>Facebook is <span id="great">great!</span></p>
+            <p class="orange">Paragraph 2</p>
+            <p> Paragraph 3</p>
+        </div>
+        <div class="yellowbox">
+            <p>Apple</p>
+            <p><a>This is a link</a></p>
+        </div>
+        <p>A Paragraph</p>
+        <div class="greenbox">
+            <p>Microsoft</p>
+        </div>
+
+        <script>
+        $(function(){
+        $("*").css("font-size", '16px'); // Select all html elements
+
+        $("p").css("text-align", "center");
+
+        // Paragraphs that are direct childs of divs
+        //$("div > p").css("text-align", "center");
+
+        // Paragraphs that are siblings of divs
+        //$("div ~ p").css("text-align", "center");
+
+        $("div  p").css("text-align", "center");
+
+        $("#great").css("background-color", "orange");
+
+        $(".orange").css("background-color", "orange");
+
+        $("div.bluebox").css("font-family", "sans-serif");
+
+        $("p:first-child, p:last-child").css("text-decoration", "underline");
+
+        });
+        </script>
+    </body>
+
+</html>
