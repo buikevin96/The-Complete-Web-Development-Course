@@ -2,23 +2,23 @@
 <html>
     <head>
         <meta charset = "utf-8">
-        <title>Slect HTML elements</title>
+        <title>Select HTML elements</title>
         <style>
             .bluebox{
                 background-color: blue;
-                height: 100px;
+                height: auto;
                 width: auto;
                /* visibility: hidden;
                 display: none; */
             }
             .yellowbox{
                 background-color: yellow;
-                height: 100px;
+                height: auto;
                 width: auto;
             }
             .greenbox{
                 background-color: green;
-                height: 100px;
+                height: auto;
                 width: auto;
             }
             #great{
@@ -36,12 +36,32 @@
             <p> Paragraph 3</p>
         </div>
         <div class="yellowbox">
-            <p>Apple</p>
+            <p><a href="http://www.google.com">Apple</a></p>
+            <ul>
+                <li>BMW</li>
+                <li>Audi</li>
+                <li>Mercedes</li>
+            </ul>
             <p><a>This is a link</a></p>
         </div>
         <p>A Paragraph</p>
         <div class="greenbox">
-            <p>Microsoft</p>
+            <p><a href="http://www.microsoft.com">Microsoft</a></p>
+            <ul>
+                <li>BMW</li>
+                <li>Audi</li>
+                <li>Mercedes</li>
+            </ul>
+            <table>
+                <tr><th>Phone Make</th><th>Model</th><th>Model</th></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+
+                <p>Type your name: <input><button type="submit">Submit</button></p>
+            </table>
         </div>
 
         <script>
@@ -66,6 +86,22 @@
 
         $("p:first-child, p:last-child").css("text-decoration", "underline");
 
+        // Change the font of links to red
+        $("[href]").css("color", "red");
+
+        $("li:first-child, li:last-child").css("background-color", "teal");
+
+        // Select even elements in a table
+        $("tr:even").css("background-color", "orange");
+        $("tr:odd").css("background-color", "purple");
+
+        // Changes input background color
+        $(":input").css("background-color", "#1da492");
+        //Changes background color of submit button
+        $(":submit").css("background-color", "#7979eb");
+
+        // Changes background-color of div with table
+        $("div:has(table)").css("background-color", "pink");
         });
         </script>
     </body>
