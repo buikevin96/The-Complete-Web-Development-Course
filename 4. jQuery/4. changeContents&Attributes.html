@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Select HTML elements</title>
+        <style>
+            .bluebox{
+                background-color: blue;
+                height: auto;
+                width: auto;
+               /* visibility: hidden;
+                display: none; */
+            }
+            .yellowbox{
+                background-color: yellow;
+                height: auto;
+                width: auto;
+            }
+            .greenbox{
+                background-color: green;
+                height: auto;
+                width: auto;
+            }
+            #great{
+                background-color: purple;
+                display: block;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div class="bluebox" id="facebook">
+            <p>Facebook is <span id="great">great!</span></p>
+            <p class="orange">Paragraph 2</p>
+            <p> Paragraph 3</p>
+        </div>
+        <div class="yellowbox" id="apple">
+            <p><a href="http://www.google.com">Apple</a></p>
+            <ul>
+                <li>BMW</li>
+                <li>Audi</li>
+                <li>Mercedes</li>
+            </ul>
+            <p><a>This is a link</a></p>
+        </div>
+        
+        <div class="greenbox">
+            <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftLink">Microsoft</a></p>
+            <p>Enter Your Name: <input id="input"></p>
+        </div>
+        
+        <button id="changeFacebook">Change FaceBook Text</button>
+        <button id="changeApple">Change Apple HTML</button>
+        <button id="changeInput">Change Input Value</button>
+        <button id="changeMicrosoft">Change Input Value</button>
+        <script>
+        
+        $(function (){
+            //Changes content of facebook div on click
+            $("#changeFacebook").click(function(){
+                $("#facebook").text("Just Facebook");
+            });
+            // Change the html code
+            $("#changeApple").click(function(){
+                $("#apple").html("<p>This is Apple<p><p>New IOS Available</p>");
+            });
+            // Change text inside input field
+            $("#changeInput").click(function(){
+                $("#input").val("Sam");
+            });
+            $("#changeMicrosoft").click(function(){
+                $("#microsoftLink").attr({"href" : "http://www.google.com", "title" : "Google"});
+            });
+        });
+        </script>
+    </body>
+
+</html>
