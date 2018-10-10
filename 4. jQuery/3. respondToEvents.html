@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Select HTML elements</title>
+        <style>
+            .bluebox{
+                background-color: blue;
+                height: auto;
+                width: auto;
+               /* visibility: hidden;
+                display: none; */
+            }
+            .yellowbox{
+                background-color: yellow;
+                height: auto;
+                width: auto;
+            }
+            .greenbox{
+                background-color: green;
+                height: auto;
+                width: auto;
+            }
+            #great{
+                background-color: purple;
+                display: block;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div class="bluebox">
+            <p>Facebook is <span id="great">great!</span></p>
+            <p class="orange">Paragraph 2</p>
+            <p> Paragraph 3</p>
+        </div>
+        <div class="yellowbox">
+            <p><a href="http://www.google.com">Apple</a></p>
+            <ul>
+                <li>BMW</li>
+                <li>Audi</li>
+                <li>Mercedes</li>
+            </ul>
+            <p><a>This is a link</a></p>
+        </div>
+        <p>A Paragraph</p>
+        <div class="greenbox">
+            <p><a href="http://www.microsoft.com">Microsoft</a></p>
+            <ul>
+                <li>BMW</li>
+                <li>Audi</li>
+                <li>Mercedes</li>
+            </ul>
+            <table>
+                <tr><th>Phone Make</th><th>Model</th><th>Model</th></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+
+                <p>Type your name: <input id="input"><button type="submit" id="submit">Submit</button></p>
+            </table>
+        </div>
+
+        <script>
+        
+        $(function (){
+            // When paragraph is clicked
+            //$("p").click(function(){
+                // Change background color of paragraphs to violet
+                //$("p").css("background-color", "violet");
+               // $(this).css("background-color", "violet"); // Changes the select background color
+            
+            $("p").mouseover(function(){
+                $(this).css("background-color", "pink");
+            });
+            $("p").mouseout(function(){
+                $(this).css("background-color", "");
+            });
+            $("input").focus(function(){
+                $(this).css("background-color", "red");
+            });
+            $("input").blur(function(){
+                $(this).css("background-color", "orange");
+            });
+            $("input").keyup(function(){
+                $(this).css("background-color", "yellow");
+            });
+            $("#submit").click(function(){
+                $("#input").css("background-color", "white"); // Change backgroundcolor to white
+                $("#input").val(""); // Empties content
+            });
+        });
+        </script>
+    </body>
+
+</html>
