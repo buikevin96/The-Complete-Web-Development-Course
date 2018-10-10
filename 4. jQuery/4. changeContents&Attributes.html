@@ -45,7 +45,7 @@
             <p><a>This is a link</a></p>
         </div>
         
-        <div class="greenbox">
+        <div class="greenbox" id="microsoft">
             <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftLink">Microsoft</a></p>
             <p>Enter Your Name: <input id="input"></p>
         </div>
@@ -54,6 +54,7 @@
         <button id="changeApple">Change Apple HTML</button>
         <button id="changeInput">Change Input Value</button>
         <button id="changeMicrosoft">Change Input Value</button>
+        <button id="addText">Add Text</button>
         <script>
         
         $(function (){
@@ -71,6 +72,11 @@
             });
             $("#changeMicrosoft").click(function(){
                 $("#microsoftLink").attr({"href" : "http://www.google.com", "title" : "Google"});
+            });
+            $("#addText").click(function(){
+                //$("#microsoft").append("<ul><li>BMW</li><li>Mercedes</li><li>Audi</li></ul>");
+                //$("#microsoft").prepend("<ul><li>BMW</li><li>Mercedes</li><li>Audi</li></ul>");
+                $("#microsoftLink").after("<p>New Paragraph</p>")
             });
         });
         </script>
