@@ -53,7 +53,8 @@
         
         <button id="changeApple">Change Apple HTML</button>
         <button id="changeInput">Change Input Value</button>
-        <button id="changeMicrosoft">Change Input Value</button>
+        <button id="changeMicrosoft">Change Microsoft Input Value</button>
+        <button id="showMicrosoft">Show Microsoft Input Value</button>
         <button id="addText">Add Text</button>
         <script>
         
@@ -65,7 +66,26 @@
             });
 
             $("#changeApple").click(function(){
-                $("#apple").removeClass("yellowbox");
+                $("#apple").css("position", "absolute");
+                $("#apple").css({'top': 200*Math.random(), 'left': 200*Math.random(), 'background-color': 'rgb(100,100,100)'});
+            });
+
+            $("#changeMicrosoft").click(function(){
+                $("#microsoft").toggleClass("greenbox");
+            });
+
+            // Hide the microsoft box
+            $("#microsoft").dblclick(function(){
+                    $(this).hide();
+            });
+
+            // Show the microsoft box
+            $("#showMicrosoft").click(function(){
+                    $("#microsoft").show();
+            });
+
+            $("#changeGreat").click(function(){
+                $("#great").wrap("<div></div>");
             })
         });
         </script>
