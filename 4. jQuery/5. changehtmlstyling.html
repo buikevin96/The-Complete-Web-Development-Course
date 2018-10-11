@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Change HTML styling</title>
+        <style>
+            .bluebox{
+                background-color: blue;
+                height: auto;
+                width: auto;
+               /* visibility: hidden;
+                display: none; */
+            }
+            .yellowbox{
+                background-color: yellow;
+                height: auto;
+                width: auto;
+            }
+            .greenbox{
+                background-color: green;
+                height: auto;
+                width: auto;
+            }
+            #great{
+                background-color: purple;
+                display: block;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <button id="changeFacebook">Change FaceBook Text</button>
+        <div class="bluebox" id="facebook">
+            <p>Facebook is <span id="great">great!</span></p>
+            <p class="orange">Paragraph 2</p>
+            <p> Paragraph 3</p>
+        </div>
+        <div class="yellowbox" id="apple">
+            <p><a href="http://www.google.com">Apple</a></p>
+            <ul>
+                <li>BMW</li>
+                <li>Audi</li>
+                <li>Mercedes</li>
+            </ul>
+            <p><a>This is a link</a></p>
+        </div>
+        
+        <div class="greenbox" id="microsoft">
+            <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftLink">Microsoft</a></p>
+            <p>Enter Your Name: <input id="input"></p>
+        </div>
+        
+        <button id="changeApple">Change Apple HTML</button>
+        <button id="changeInput">Change Input Value</button>
+        <button id="changeMicrosoft">Change Input Value</button>
+        <button id="addText">Add Text</button>
+        <script>
+        
+        $(function (){
+            $("#changeFacebook").click(function(){
+                $("#facebook").css("width", 100*Math.random());
+                $("#facebook").addClass("greenbox");
+                window.alert($("facebook").innerHeight());
+            });
+
+            $("#changeApple").click(function(){
+                $("#apple").removeClass("yellowbox");
+            })
+        });
+        </script>
+    </body>
+
+</html>
