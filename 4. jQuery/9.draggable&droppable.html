@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset = "utf-8">
-        <title>jQuery UI Intro</title>
+        <title>Draggable & Droppable</title>
         <style>
             .bluebox{
                 background-color: blue;
@@ -76,8 +76,24 @@
         $(function (){
             // Makes facebook div draggable
             $("#facebook").draggable();
-            $("#apple").draggable();
+            $("#apple").draggable({
+                axis: "y"
+            });
 
+            $("#microsoft").draggable({
+                revert: true,
+                // Changes color of facebook when dragged
+                start: function(){
+                    $("#facebook").css("background-color","teal");
+                },
+                // Changes color of microsoft when dragged self
+                drag: function(){
+                    $("#microsoft").css("background-color","orange");
+                },
+                stop: function(){
+                    $("#apple").css("background-color", "coral");
+                }
+            });
         });
         </script>
     </body>
