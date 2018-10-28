@@ -55,13 +55,11 @@
             <p> Paragraph 3</p>
         </div>
         <div class="yellowbox ui-corner-all" id="apple">
-            <p><a href="http://www.google.com">Apple</a></p>
-            <ul>
-                <li>BMW</li>
-                <li>Audi</li>
-                <li>Mercedes</li>
+            <ul id="list">
+                <li>eggs</li>
+                <li>milk</li>
+                <li>bread</li>
             </ul>
-            <p><a>This is a link</a></p>
         </div>
         
         <div class="greenbox ui-corner-all" id="microsoft">
@@ -109,11 +107,16 @@
             });
 
             $("#droppable").droppable({
-                drop: function(){
+                drop: function(event, ui){
                     $(this).css("background-color", "pink");
+                    $(this).find("p").remove();
+                    $("<div></div>").text(ui.draggable.text()).appendto(this);
                 },
-                accept: "#facebook"
+                accept: "#list li"
             });
+
+            // To make list items draggable
+            $("#list").find("li").draggable({helper: "clone", appendTo: "body"});
         });
         </script>
     </body>
