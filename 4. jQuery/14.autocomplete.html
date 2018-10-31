@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Accordian</title>
+        <style>
+            .bluebox{
+                background-color: blue;
+                height: auto;
+                width: auto;
+               /* visibility: hidden;
+                display: none; */
+            }
+            .yellowbox{
+                background-color: yellow;
+                height: auto;
+                width: auto;
+            }
+            .greenbox{
+                background-color: green;
+                height: auto;
+                width: auto;
+            }
+            #great{
+                background-color: purple;
+                display: block;
+            }
+            .ui-autocomplete{
+                max-height: 100px;
+                overflow-y: auto;
+                max-width: 200px;
+                overflow-x: auto;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+
+    <body>
+        <div class="bluebox ui-corner-all" id="facebook">
+             <p>Facebook</p>
+             <p>Input your city: <input id="city"></p>
+        </div>
+
+        <div class="yellowbox">
+            <p><a href="http://www.google.com">Apple</a></p>
+            <ul>
+                <li>BMW</li>
+                <li>Audi</li>
+                <li>Mercedes</li>
+            </ul>
+            <p><a>This is a link</a></p>
+        </div>
+        
+        <div class="greenbox">
+            <p><a href="http://www.microsoft.com">Microsoft</a></p>
+            <ul>
+                <li>BMW</li>
+                <li>Audi</li>
+                <li>Mercedes</li>
+            </ul>
+            <table>
+                <tr><th>Phone Make</th><th>Model</th><th>Model</th></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+
+                <p>Type your name: <input><button type="submit">Submit</button></p>
+            </table>
+        </div>
+
+        <script>
+        $(function(){
+            $("#city").autocomplete({
+                source: ["London", "Paris", "Charlotte", "New York City", "Los Angeles", "Madrid", "Charleston", "San Francisco", "Chapel Hill"]
+            });
+            
+
+        });
+        </script>
+    </body>
+
+</html>
