@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Accordian</title>
+        <style>
+            .bluebox{
+                background-color: blue;
+                height: auto;
+                width: auto;
+               /* visibility: hidden;
+                display: none; */
+            }
+            .yellowbox{
+                background-color: yellow;
+                height: auto;
+                width: auto;
+            }
+            .greenbox{
+                background-color: green;
+                height: auto;
+                width: auto;
+            }
+            #great{
+                background-color: purple;
+                display: block;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+
+    <body>
+        <div id="resizer" class="ui-widget-content">
+            <div class="bluebox ui-corner-all" id="facebook">
+                <h3>Section 1</h3>
+            <div>
+                <p>Content 1</p>
+                <p>Content 1</p>
+                <p>Content 1</p>
+                <p>Content 1</p>
+                <p>Content 1</p>
+            </div>
+                <h3>Section 2</h3>
+            <div><p>Content 2</p></div>
+                <h3>Section 3</h3>
+            <div><p>Content 3</p></div>
+        </div>
+        </div>
+
+
+        <div class="yellowbox">
+            <p><a href="http://www.google.com">Apple</a></p>
+            <ul>
+                <li>BMW</li>
+                <li>Audi</li>
+                <li>Mercedes</li>
+            </ul>
+            <p><a>This is a link</a></p>
+        </div>
+        
+        <div class="greenbox">
+            <p><a href="http://www.microsoft.com">Microsoft</a></p>
+            <ul>
+                <li>BMW</li>
+                <li>Audi</li>
+                <li>Mercedes</li>
+            </ul>
+            <table>
+                <tr><th>Phone Make</th><th>Model</th><th>Model</th></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+                <tr><td>Apple</td><td>Iphone 4</td><td>16gb</td></tr>
+
+                <p>Type your name: <input><button type="submit">Submit</button></p>
+            </table>
+        </div>
+
+        <script>
+        $(function(){
+            $("#facebook").accordion({
+                collapsible: true,
+                icons: {
+                    header: "ui-icon-circle-arrow-e",
+                    activeHeader: "ui-icon-circle-arrow-s"
+                },
+                heightStyle: "content"
+            });
+
+            $("#resizer").resizable({
+                resize: function(){
+                    $("#facebook").accordion("refresh");
+                }
+            });
+
+        });
+        </script>
+    </body>
+
+</html>
