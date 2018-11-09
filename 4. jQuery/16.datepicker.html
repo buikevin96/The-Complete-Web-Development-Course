@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Datepicker</title>
+        <style>
+            .bluebox{
+                background-color: blue;
+                height: auto;
+                width: auto;
+               /* visibility: hidden;
+                display: none; */
+            }
+            .yellowbox{
+                background-color: yellow;
+                height: auto;
+                width: auto;
+            }
+            .greenbox{
+                background-color: green;
+                height: auto;
+                width: auto;
+            }
+            #great{
+                background-color: purple;
+                display: block;
+            }
+            .ui-autocomplete{
+                max-height: 100px;
+                overflow-y: auto;
+                max-width: 200px;
+                overflow-x: auto;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+
+    <body>
+        <div class="bluebox ui-corner-all" id="facebook">
+             <p>Facebook</p>
+             <p>Input your city: <input id="city"></p>
+             <div id="checkboxes">
+                <input type="checkbox" id="checkbox1">
+                <label for="checkbox1">Audi</label>
+                <input type="checkbox" id="checkbox2">
+                <label for="checkbox2">BMW</label>
+                <input type="checkbox" id="checkbox3">
+                <label for="checkbox3">Mercedes</label>
+             </div>
+             <p>Flight departure date: <input id="departure"></p>
+             <p>Flight return date: <input id="return"></p>
+        </div>
+
+        <div class="yellowbox">
+            <input type="checkbox" id="myCheckbox">
+            <label for="myCheckbox">Checkbox</label>
+        </div>
+        
+        <div class="greenbox">
+            <p><a href="http://www.microsoft.com">Microsoft</a></p>
+            <form>
+                <div id="radioBoxes">
+                    <input type="radio" id="radioBox1" name="radioBoxes">
+                    <label for="radioBox1">Ford</label>
+                    <input type="radio" id="radioBox2" name="radioBoxes">
+                    <label for="radioBox2">Toyota</label>
+                    <input type="radio" id="radioBox3" name="radioBoxes">
+                    <label for="radioBox3">Ferrari</label>
+                </div>
+            </form>
+        </div>
+
+        <button id="button1">Button1</button>
+        <button id="button2">Button2</button>
+        <button id="button3">Button3</button>
+
+
+        <script>
+        $(function(){
+          $("#departure").datepicker({
+              showAnim: "fadeIn",
+              changeYear: true,
+              numberOfMonths: 1,
+              dateFormat: "mm/dd/yy",
+              showOn: "button",
+              buttonImage: "images/calendar.png",
+              buttonImageOnly: true,
+              buttonText: "Choose your departure date.",
+              minDate: +1,
+              maxDate: "+12M +10D",
+              onClose: function(selectedDate){
+                  $("#return").datepicker("option", "minDate", selectedDate)
+              },
+              showWeek: true
+              });
+          $("#return").datepicker({
+            dateFormat: "mm/dd/yy",
+          });
+        });
+        </script>
+    </body>
+
+</html>
