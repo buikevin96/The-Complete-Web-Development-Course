@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Dialog</title>
+        <style>
+            .bluebox{
+                background-color: blue;
+                height: auto;
+                width: auto;
+               /* visibility: hidden;
+                display: none; */
+                color: white;
+            }
+            .yellowbox{
+                background-color: yellow;
+                height: auto;
+                width: auto;
+            }
+            .greenbox{
+                background-color: green;
+                height: auto;
+                width: auto;
+            }
+            #great{
+                background-color: purple;
+                display: block;
+            }
+            .ui-autocomplete{
+                max-height: 100px;
+                overflow-y: auto;
+                max-width: 200px;
+                overflow-x: auto;
+            }
+            .ui-menu{
+                width: 100px;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+
+    <body>
+        <div class="bluebox ui-corner-all" id="facebook">
+             <ul id="continents">
+                 <li>Africa</li>
+                 <li>Europe</li>
+                    <ul>
+                        <li>France</li>
+                        <li>UK</li>
+                            <ul>
+                                <li>England</li>
+                                <li>Scotland</li>
+                                <li>Wales</li>
+                                <li>Northern Ireland</li>
+                            </ul>
+                        <li>Spain</li>
+                    </ul>
+                 <li>America</li>
+                 <li>Asia</li>
+                 <li>Australia</li>
+             </ul>
+        </div>
+
+        <div class="yellowbox">
+            <input type="checkbox" id="myCheckbox">
+            <label for="myCheckbox">Checkbox</label>
+            <ul id="continents2">
+                <li>Africa</li>
+                <li class="ui-widget-header">Europe</li>
+                       <li>France</li>
+                       <li>UK</li>
+                           <ul>
+                               <li>England</li>
+                               <li>Scotland</li>
+                               <li>Wales</li>
+                               <li>Northern Ireland</li>
+                           </ul>
+                       <li>Spain</li>
+                   
+                <li class="ui-widget-header">America</li>
+                <li class="ui-widget-header">Asia</li>
+                <li class="ui-widget-header">Australia</li>
+            </ul>
+        </div>
+        
+        <div class="greenbox">
+            <p><a href="http://www.microsoft.com">Microsoft</a></p>
+            <form>
+                <div id="radioBoxes">
+                    <input type="radio" id="radioBox1" name="radioBoxes">
+                    <label for="radioBox1">Ford</label>
+                    <input type="radio" id="radioBox2" name="radioBoxes">
+                    <label for="radioBox2">Toyota</label>
+                    <input type="radio" id="radioBox3" name="radioBoxes">
+                    <label for="radioBox3">Ferrari</label>
+                </div>
+            </form>
+        </div>
+
+        <div id="myDialog" title="This is a dialog.">
+            <p>Welcome to our page</p>
+        </div>
+
+        <div id="confirmation" title="Leave the page?">
+            <p><span class="ui-icon ui-icon-alert"></span>You will lose all unsaved work. Are you sure?</p>
+        </div>
+
+        <button id="open">Open Dialog</button>
+        <button id="goToPreviousPage">Go to previous page</button>
+
+
+        <script>
+        $(function(){
+            $("#continents").menu();
+
+            $("#continents2").menu();
+        });
+        </script>
+    </body>
+
+</html>
